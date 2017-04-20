@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-midi-launchpad",     "homepage": "https://github.com/npmtest/node-npmtest-midi-launchpad",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-midi-launchpad.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [midi-launchpad (v1.0.3)](http://sydlawrence.github.io/node-midi-launchpad/)  [![npm package](https://img.shields.io/npm/v/npmtest-midi-launchpad.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-midi-launchpad) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-midi-launchpad.svg)](https://travis-ci.org/npmtest/node-npmtest-midi-launchpad)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-midi-launchpad",
+    "keywords": [
+        "coverage",
+        "test",
+        "midi-launchpad"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_midi_launchpad.js",
+    "name": "npmtest-midi-launchpad",
+    "nameAlias": "npmtest_midi_launchpad",
+    "nameOriginal": "npmtest-midi-launchpad",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-midi-launchpad.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
